@@ -1,5 +1,12 @@
-title: Causal Inference with R - IV and RDD
-description: Course description goes here.
+title            : Causal Inference with R - Instrumental Variables & RDD
 programming_language: r
-from: "r-base-prod:v1.0.2"
-#from: "tidyverse-base-prod:v1.0.2"
+instructors:
+- matt.masten@duke.edu
+- speckart@duke.edu
+- ransom@ou.edu
+- bdaronson@gmail.com
+- cooper@duke.edu
+description      : A look at using Instrumental Variables and Regression Discontinuity to estimate causal effects
+university       : DataCamp
+difficulty_level : 4
+time_needed      : 10 hours
