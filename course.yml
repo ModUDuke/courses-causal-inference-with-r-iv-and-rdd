@@ -1,5 +1,6 @@
 title            : Causal Inference with R - Instrumental Variables & RDD
 programming_language: r
+from: "r-base-prod:v1.0.2"
 instructors:
 - matt.masten@duke.edu
 - speckart@duke.edu
