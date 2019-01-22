@@ -325,10 +325,12 @@ Remember back to an earlier video, where we looked at the hyothetical question o
 `@possible_answers`
 - Researchers think the Relevance Assumption does not hold: whether you live close to a college or not doesn't actually affect whether you go to college or not
 - Researchers think the Exclusion Restriction does not hold: employers are willing to pay people more money if students went to high school in a town that was close to a college
-- Researchers think the Exogeneity Assumption does not hold: there are unobserved variables, like ability, which are correlated with distance-to-college and which also affect how much income you'll make
+- [Researchers think the Exogeneity Assumption does not hold: there are unobserved variables, like ability, which are correlated with distance-to-college and which also affect how much income you'll make]
 
 `@feedback`
-
+- Not quite. Remember that relevance is refutable, so people don't usually complain about this because it can be checked in the data. Try again.
+- This is probably not the most common complaint, because it would take a long and complex argument to justify this as the single main reason why the IV analysis is invalid. Try again.
+- Correct! This would be the most common complaint, and it's a good one. Luckily, the example was theoretical!
 
 ---
 
