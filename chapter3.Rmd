@@ -712,10 +712,11 @@ True or False: If we look at the data used in the Black (1999) paper, even if ea
 
 `@possible_answers`
 - True
-- False
+- [False]
 
 `@feedback`
-
+- Are all the units on both sides of the boundary identical, except for the side of the boundary they are on? Try again.
+- Correct! It is true that geographical borders are *often* used to learn about causal effects via RDD. But this requires that the only thing that's different between units on each side of the border is the treatment! This is often not the case. For example, if you look at country borders, there are often many different variables that change as you cross the border, which means it will be hard or impossible to disentangle the effect of just one of these variables.
 
 ---
 
