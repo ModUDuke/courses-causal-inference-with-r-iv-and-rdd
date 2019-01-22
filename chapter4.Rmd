@@ -50,13 +50,13 @@ LATE is defined as the average treatment effect for the compliers. Why don't we 
 - Because we only care about compliers
 - Because we already know what the treatment effect is for the always takers, by definition
 - Because the always takers and the compliers have the same treatment effect
-- None of the above
+- [None of the above]
 
 `@feedback`
-msg1 = "That's not necessarily true, because the always takers are also going to be treated, so we probably want to know about their outcomes as well. Try again."
-msg2 = "This is not always possible, actually, since we don't have any data about when they don't take treatment (because they always get treated). Try again."
-msg3 = "We would only be able to test this if we could always calculate the treatment effect for always takers, but we don't have their counterfactual outcomes (by definition), so we don't know if they have the same treatment effect as the compliers. Try again."
-msg4 = "Correct, it's none of the above. The reason is that we are able to compute LATE from the data, (i.e. we can show it is 'identified'.) But the average treatment effect for always takers is not nearly as easy to get, or indeed could be impossible to learn: a necessary condition to calculate treatment effects is to observe outcomes for individuals in a population who do and don’t receive treatment. Since always takers always get treated, we don’t have any data about when they don’t take treatment. So we focus on LATE not so much because of intrinsic interest, although that is often the case, but also because it is something we are able to learn from the data."
+- That's not necessarily true, because the always takers are also going to be treated, so we probably want to know about their outcomes as well. Try again.
+- This is not always possible, actually, since we don't have any data about when they don't take treatment (because they always get treated). Try again.
+- We would only be able to test this if we could always calculate the treatment effect for always takers, but we don't have their counterfactual outcomes (by definition), so we don't know if they have the same treatment effect as the compliers. Try again.
+- Correct, it's none of the above. The reason is that we are able to compute LATE from the data, (i.e. we can show it is 'identified'.) But the average treatment effect for always takers is not nearly as easy to get, or indeed could be impossible to learn: a necessary condition to calculate treatment effects is to observe outcomes for individuals in a population who do and don’t receive treatment. Since always takers always get treated, we don’t have any data about when they don’t take treatment. So we focus on LATE not so much because of intrinsic interest, although that is often the case, but also because it is something we are able to learn from the data.
 
 ---
 
