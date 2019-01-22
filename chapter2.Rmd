@@ -124,7 +124,7 @@ You get your hands on a national dataset that has statistics on bike lanes, fami
 - [Kids are not made happier from the painted lines on the road]
 - All kids are equally happy when they are on a bike, whether alone or with their family
 - Traffic safety with bike lanes always varies, but kids adjust as needed
-- Some kids are happier to ride in bike lanes and happier to bike offroad, but those preferences cancel each other out
+- Some kids are happier to ride in bike lanes and happier to bike off-road, but those preferences cancel each other out
 
 `@feedback`
 - Correct! This is the best argument because, if kids only bike when there are bike lanes, then this argument would suddenly become a very weak one, because simply painting new lines on a road would make kids very happy, independently of whether they actually ride a bike or not.
