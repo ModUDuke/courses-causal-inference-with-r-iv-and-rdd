@@ -93,11 +93,13 @@ You're doing some research and plan on using an instrumental variables strategy 
 
 `@possible_answers`
 - The instrument's measurement error is independent of the values for the treatment and outcome variables
-- The instrument's measurement error is independent of the values of the treatment variable, but not for the outcome variable
+- [The instrument's measurement error is independent of the values of the treatment variable, but not for the outcome variable]
 - The instrument's measurement error is independent of the values from the outcome variable, but not for the treatment variable
 
 `@feedback`
-
+- This is perfectly fine with IV analysis. If the measurement error is not affecting the measurement of the treatment and outcome variables, then we're safe. We are looking for the option that would violate the IV assumptions, so try again.
+- Correct! This would break our IV analysis, because it would mean that the instrument has some direct effect on the values of the outcome variable by itself, but to use IV correctly, we need the instrument to only indirectly act on the outcome via the treatment variable.
+- This is perfectly fine with IV analysis. We expect the instrument to have a causal effect on the treatment variable, so it would make sense that the measurement error would show up in the value of our treatment variable. But we are looking for the option that would violate the IV assumptions, so try again.
 
 ---
 
