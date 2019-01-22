@@ -270,15 +270,15 @@ Alan the Egg Farmer consistently sells all of his fresh eggs on his island in th
 
 Luckily, he has a lot of down time and an interest in data science. He knows there are a lot of different factors involved in the production of eggs and in the sales of eggs, from chicken health to transportation costs to popular food trends, and he wants to find a single variable that can help him cut through the many possible confounding factors. So he comes up with an idea for doing an instrumental variable analysis: Alan knows that chickens produce fewer eggs in years with less rain, and he knows that farmers consistently increase their egg prices on years when they have low egg yields. Therefore, with a big dataset on egg sales and the weather history of nearby islands, Alan believes that he could study weather patterns as an instrument for egg prices, and he can use that instrument to find the impact of egg prices on egg sales. Which of the following assumptions does Alan's model depend on?
   
-- a) Egg prices are affected only by the weather 
-- b) The weather and amounts of egg sales are not both caused by another factor 
-- c) The weather is not correlated with other factors (besides egg prices) that are consequential to egg sales
-- d) The weather has no effect on egg sales
+- A) Egg prices are affected only by the weather 
+- B) The weather and amounts of egg sales are not both caused by another factor 
+- C) The weather is not correlated with other factors (besides egg prices) that are consequential to egg sales
+- D) The weather has no effect on egg sales
 
 `@possible_answers`
-- a, c
-- b, d
-- a, b, c 
+- A, C
+- B, D
+- A, B, C 
 - All of the above
 
 `@hint`
