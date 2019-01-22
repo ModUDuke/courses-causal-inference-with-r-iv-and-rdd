@@ -67,7 +67,11 @@ As the videos discussed, there are some strict requirements to use instrumental 
 - The instrument has a direct causal effect on both the treatment and the outcome.
 
 `@feedback`
-
+msg1 = "That's not correct. The instrument should only be correlated with the outcome, and must have a causal effect on the treatment variable. Try again."
+msg2 = "Correct! Nice job."
+msg3 = "The instrument must have a causal effect on the treatment (but not on the outcome) to use an instrumental variables analysis. Try again."
+msg4 = "The instrument should have a causal effect on the treatment, but should only be correlated wit the outcome. Try again."
+test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
 
 ---
 
