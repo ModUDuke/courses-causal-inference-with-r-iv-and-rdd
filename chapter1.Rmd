@@ -150,15 +150,14 @@ So now we can summarize the main purpose of IV analysis. Once again, how does th
 `@possible_answers`
 - The treatment affects the instrument, which affects the outcome. The causal effect of the treatment on the outcome is equal to the correlation of the instrument and the treatment.
 - The treatment affects the outcome, and the instrument is correlated with the outcome. To get the effect of the treatment on the outcome, we calculate the correlation of the instrument on the outcome.
-- The instrument affects the treatment, and the treatment affects the outcome. To get the effect of the treatment on the outcome, we find the correlation of the instrument on the outcome, and subtract out the effect of the instrument on the treatment.
+- [The instrument affects the treatment, and the treatment affects the outcome. To get the effect of the treatment on the outcome, we find the correlation of the instrument on the outcome, and subtract out the effect of the instrument on the treatment.]
 - The instrument and the treatment combine to create the outcome. So the treatment effect is the sum of the effect of the instrument on the treatment and the effect of the treatment on the outcome.
 
 `@feedback`
-msg1 = "This is not the design of IV analysis. We need to subtract out the effect of the instrument on the treatment from the correlation of the instrument on the outcome. Try again."
-msg2 = "Incorrect. We need to subtract out the effect of the instrument on the treatment from the correlation of the instrument on the outcome. Try again."
-msg3 = "Correct! Way to go!"
-msg4 = "That is not exactly the process. We do not add these effects together to find the causal effect. Try again."
-test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
+- This is not the design of IV analysis. We need to subtract out the effect of the instrument on the treatment from the correlation of the instrument on the outcome. Try again.
+- Incorrect. We need to subtract out the effect of the instrument on the treatment from the correlation of the instrument on the outcome. Try again.
+- Correct! Way to go!
+- That is not exactly the process. We do not add these effects together to find the causal effect. Try again.
 
 ---
 
