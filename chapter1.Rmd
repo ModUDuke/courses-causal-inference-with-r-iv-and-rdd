@@ -127,7 +127,11 @@ The instrument is one of many variables that could be confounding the effect of 
 - The instrument is uncorrelated with the other pre-treatment variables.
 
 `@feedback`
-
+msg1 = "This is very incorrect. It should have no correlation to any other pre-treatment variables, a.k.a. is randomly assigned. Try again."
+msg2 = "Incorrect. The other pre-treatment variables should have no correlation with the instrument. Try again."
+msg3 = "This is not true. Just because we don't have data on a variable does not mean it might not affect the instrument. Try again"
+msg4 = "Correct!"
+test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
 
 ---
 
