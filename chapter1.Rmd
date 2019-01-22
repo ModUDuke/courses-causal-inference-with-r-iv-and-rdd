@@ -298,12 +298,11 @@ Luckily, he has a lot of down time and an interest in data science. He knows the
 `@possible_answers`
 - A, C
 - B, D
-- A, B, C 
+- [A, B, C]
 - All of the above
 
 `@feedback`
-msg1 = "Almost! These are both assumptions of Alan's model, but there are more. Try again."
-msg2 = "Not quite. b) is an important assumption of Alan's model, but d) is not. Try again."
-msg3 = "Correct! a) is true because the instrument in any IV model must affect the independent variable of interest. b) and c) are true because IVs require that the relationship between an instrument and the dependent variable cannot be explained by any other factors but their causal relationships to the key independent variable. d) is false because the instrument must be correlated with the outcome variable; if the weather has no effect on egg sales, then we cannot assume that egg sales are mediated by the effect of the weather on egg prices."
-msg4 = "Almost! At least one of the possible assumptions is false."
-test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4))
+- Almost! These are both assumptions of Alan's model, but there are more. Try again.
+- Not quite. B) is an important assumption of Alan's model, but D) is not. Try again.
+- Correct! A) is true because the instrument in any IV model must affect the independent variable of interest. B) and C) are true because IVs require that the relationship between an instrument and the dependent variable cannot be explained by any other factors but their causal relationships to the key independent variable. D) is false because the instrument must be correlated with the outcome variable; if the weather has no effect on egg sales, then we cannot assume that egg sales are mediated by the effect of the weather on egg prices.
+- Almost! At least one of the possible assumptions is false.
