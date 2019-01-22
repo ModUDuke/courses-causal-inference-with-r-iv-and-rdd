@@ -285,7 +285,6 @@ Solution4 <- "negative"
 
 `@sct`
 ```{r}
-check_error()
 ex() %>% check_object("Solution2") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
 ex() %>% check_object("Solution4") %>% check_equal()
@@ -508,10 +507,10 @@ Solution4 <- "increase"
 
 `@sct`
 ```{r}
-test_object("Solution1")
-test_object("Solution2")
-test_object("Solution3")
-test_object("Solution4")
+ex() %>% check_object("Solution1") %>% check_equal()
+ex() %>% check_object("Solution2") %>% check_equal()
+ex() %>% check_object("Solution3") %>% check_equal()
+ex() %>% check_object("Solution4") %>% check_equal()
 success_msg("Good work! Based on this indirect inference analysis, the offer of a higher credit limit does indeed seem to cause people buy more stuff on their credit card. But let's see how this looks with the 2SLS method as well!")
 ```
 
@@ -710,10 +709,10 @@ Solution4 <- "increased"
 
 `@sct`
 ```{r}
-test_object("Solution1")
-test_object("Solution2")
-test_object("Solution3")
-test_object("Solution4")
+ex() %>% check_object("Solution1") %>% check_equal()
+ex() %>% check_object("Solution2") %>% check_equal()
+ex() %>% check_object("Solution3") %>% check_equal()
+ex() %>% check_object("Solution4") %>% check_equal()
 success_msg("Good work! The offer does seem to be effective, and our IV analysis tells us that the credit card offer caused customers to spend more money with their credit cards, which means CreditCo made more money on their interest payments.")
 ```
 
@@ -1193,7 +1192,7 @@ Solution2<-summary(lm(pos_depression_screen~prediction+gender_inp+age_35_49_inp+
 
 `@sct`
 ```{r}
-test_object("Solution1")
-test_object("Solution2")
+ex() %>% check_object("Solution1") %>% check_equal()
+ex() %>% check_object("Solution2") %>% check_equal()
 success_msg("Good work! This estimate for the causal effect of insurance on our outcome variable, positive depression screens, is about 5 times larger than we saw in the Intention-to-Treat analysis. It looks like health insurance does improve health outcomes, at least for this variable.")
 ```
