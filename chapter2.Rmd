@@ -737,10 +737,11 @@ In general, do you think that these two methods will always yield the same resul
 
 `@possible_answers`
 - Yes
-- No
+- [No]
 
 `@feedback`
-
+- Try again
+- Correct! The previous coding examples happened to yield identical results because of the specific situation. In general, the results should yield numbers that are "statistically similar," that is, the confidence interval of one should contain the other.
 
 ---
 
