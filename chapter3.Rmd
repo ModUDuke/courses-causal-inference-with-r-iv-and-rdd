@@ -81,10 +81,13 @@ So in this study, which variable is the outcome variable, which is the running v
 - The score at halftime is the outcome variable, winning the game is the running variable, and the home team losing at halftime is the treatment variable.
 - Winning the game is the outcome variable, the home team losing at halftime is the running variable, and the score at halftime is the treatment variable.
 - The score at halftime is the outcome variable, the home team losing at halftime is the running variable, and winning the game is the treatment variable.
-- Winning the game is the outcome variable, the score at halftime is the running variable, and the home team winning at halftime is the treatment variable.
+- [Winning the game is the outcome variable, the score at halftime is the running variable, and the home team winning at halftime is the treatment variable.]
 
 `@feedback`
-
+- The outcome we are ultimately interested in is winning the game, so that is our outcome variable. Try again.
+- This is close but not quite right. The running variable has to do with the halftime score, but it is not whether the home team is losing. Try again.
+- The outcome we are ultimately interested in is winning the game, so that is our outcome variable. Try again.
+- Correct!
 
 ---
 
