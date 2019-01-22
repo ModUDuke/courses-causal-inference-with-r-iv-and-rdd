@@ -285,9 +285,9 @@ Solution4 <- "negative"
 
 `@sct`
 ```{r}
-ex() %>% check_object(""Solution2"") %>% check_equal()
-ex() %>% check_object(""Solution3"") %>% check_equal()
-ex() %>% check_object(""Solution4"") %>% check_equal()
+ex() %>% check_object("Solution2") %>% check_equal()
+ex() %>% check_object("Solution3") %>% check_equal()
+ex() %>% check_object("Solution4") %>% check_equal()
 success_msg("Good work! Our instrument does seem to have a statistically significant negative correlation with our outcome variable. This is one important pillar that supports our argument that we can use the rainy weather as an instrument in this analysis.")
 ```
 
