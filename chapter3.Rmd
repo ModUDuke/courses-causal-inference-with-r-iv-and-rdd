@@ -687,11 +687,13 @@ Suppose your friend says "I don’t believe the results in Black (1999) because 
 
 `@possible_answers`
 - Agree
-- Disagree
+- [Disagree]
 - Partly agree
 
 `@feedback`
-
+- It's a reasonable point, but with RDD we do *NOT* have to observe this confounder across our whole sample. That's because we are just looking at statistically similar houses right next to a boundary. Try again.
+- Correct! It's a reasonable point, but the fact that we do NOT have to observe this confounder is precisely the beauty of RDD! When we look only at houses close to the boundary, those houses are close to each other, by definition. Hence they are both close to the park. So, although the park might affect the value of both houses, it should do so equally. Hence any *difference* in house prices cannot be attributed to the park. It must be attributed to the test score difference.
+- While this is a reasonable point, there is a more clear answer to this question. Try again.
 
 ---
 
