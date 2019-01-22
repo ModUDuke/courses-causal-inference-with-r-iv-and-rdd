@@ -93,14 +93,13 @@ Now let us review the relationship between the instrument and the treatment.  Wh
 - The instrument is not correlated with the treatment.
 - The treatment has a causal effect on the instrument.
 - The treatment and the outcome have a causal effect on the instrument.
-- The instrument has a causal effect on the treatment.
+- [The instrument has a causal effect on the treatment.]
 
 `@feedback`
-msg1 = "Incorrect. Not only does the instrument need to be correlated with the treatment, it must have a causal effect on the treatment. Try again."
-msg2 = "That is backwards. The instrument needs to have a causal effect on the treatment, so try again."
-msg3 = "This doesn't make much sense: we're trying to find the effect of the treatment on the outcome! Try again"
-msg4 = "Correct!"
-test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
+- Incorrect. Not only does the instrument need to be correlated with the treatment, it must have a causal effect on the treatment. Try again.
+- That is backwards. The instrument needs to have a causal effect on the treatment, so try again.
+- This doesn't make much sense: we're trying to find the effect of the treatment on the outcome! Try again.
+- Correct!
 
 ---
 
