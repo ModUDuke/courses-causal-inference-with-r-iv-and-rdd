@@ -48,12 +48,15 @@ Which of the following variables is *not* a key (required) variable in a regress
 
 `@possible_answers`
 - Outcome variable
-- Control variable
+- [Control variable]
 - Treatment variable
 - Running variable
 
 `@feedback`
-
+- The outcome variable is the variable of interest. Try again
+- Correct! While most RD's use at least one control variable, doing so is not strictly necessary for RD analysis, i.e. it is possible, but not common, to run an RD without any control variables.
+- The treatment variable is necessary in order to estimate any kind of causal effect. Try again
+- The running variable is how the researcher divides the sample into treatment and control groups. Try again
 
 ---
 
