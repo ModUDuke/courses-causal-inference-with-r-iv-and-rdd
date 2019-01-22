@@ -808,10 +808,11 @@ Who is giving better advice for defending the 'nonrefutable' assumptions of IV?
 
 `@possible_answers`
 - Alex is correct: the assumptions are nonrefutable without perfect information, so more data won't help with them 
-- Monique is correct: it's better to add more datasets to reduce the guesswork about the model
+- [Monique is correct: it's better to add more datasets to reduce the guesswork about the model]
 
 `@feedback`
-
+- "Refutability" is defined with respect to a model, which includes a description of the precise set of data which is observable. For example, suppose I observe a dataset with the age of person in the United States. Then the claim that the average age is 26 is refutable: I can simply compute the true average age and then see if it really is 26 or not. But the claim that the average annual income is $30,000 is not refutable. That’s just because my dataset doesn’t have income in it! If I observed data on income, then that claim would become refutable. Try again.
+- Correct. Without more or different kinds of data, typically the Exogeneity and Exclusion Assumptions are not refutable, and Alex would be right. However, if you add more data or change the assumptions in different ways, it is sometimes possible to convert a nonrefutable assumption into a refutable assumption. But you should always be ready with qualitative arguments to strengthen your defense of these assumptions.
 
 ---
 
