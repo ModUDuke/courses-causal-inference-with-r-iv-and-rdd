@@ -682,6 +682,8 @@ skills: 1
 
 Suppose your friend says "I don’t believe the results in Black (1999) because she doesn't control for whether there is a public park nearby the house. Having a park nearby increases the value of a house. Also, districts that have high test scores also tend to have more parks. So this test score effect might just be because of this unobserved confounder!"
 
+Do you agree, disagree, or partly agree with your friend's statement?
+
 `@hint`
 
 
