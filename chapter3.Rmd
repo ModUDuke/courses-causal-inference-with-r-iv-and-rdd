@@ -43,28 +43,17 @@ skills: 1
 
 Which of the following variables is *not* a key (required) variable in a regression discontinuity design?
 
+`@hint`
+
+
 `@possible_answers`
 - Outcome variable
 - Control variable
 - Treatment variable
 - Running variable
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "The outcome variable is the variable of interest. Try again"
-msg2 = "Correct! While most RD's use at least one control variable, doing so is not strictly necessary for RD analysis. (i.e. it is possible, but not common, to run an RD without any control variables.)"
-msg3 = "The treatment variable is necessary in order to estimate any kind of causal effect. Try again"
-msg4 = "The running variable is how the researcher divides the sample into treatment and control groups. Try again"
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
-```
 
 ---
 
@@ -82,28 +71,17 @@ A pair of researchers named Jonah Berger and Devin Pope recently published a stu
 
 So in this study, which variable is the outcome variable, which is the running variable, and which is the treatment variable?
 
+`@hint`
+
+
 `@possible_answers`
 - The score at halftime is the outcome variable, winning the game is the running variable, and the home team losing at halftime is the treatment variable.
 - Winning the game is the outcome variable, the home team losing at halftime is the running variable, and the score at halftime is the treatment variable.
 - The score at halftime is the outcome variable, the home team losing at halftime is the running variable, and winning the game is the treatment variable.
 - Winning the game is the outcome variable, the score at halftime is the running variable, and the home team winning at halftime is the treatment variable.
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "The outcome we are ultimately interested in is winning the game, so that is our outcome variable. Try again"
-msg2 = "This is close but not quite right. The running variable has to do with the halftime score, but it is not whether the home team is losing. Try again"
-msg3 = "The outcome we are ultimately interested in is winning the game, so that is our outcome variable. Try again"
-msg4 = "Correct!"
-test_mc(correct = 4, feedback_msgs = c(msg1,msg2,msg3,msg4))
-```
 
 ---
 
@@ -698,26 +676,16 @@ skills: 1
 
 Suppose your friend says "I don’t believe the results in Black (1999) because she doesn't control for whether there is a public park nearby the house. Having a park nearby increases the value of a house. Also, districts that have high test scores also tend to have more parks. So this test score effect might just be because of this unobserved confounder!"
 
+`@hint`
+
+
 `@possible_answers`
 - Agree
 - Disagree
 - Partly agree
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "It's a reasonable point, but with RDD we do NOT have to observe this confounder across our whole sample. That's because we are just looking at statistically similar houses right next to a boundary. Try again"
-msg2 = "Correct! It's a reasonable point, but the fact that we do NOT have to observe this confounder is precisely the beauty of RDD! When we look only at houses close to the boundary, those houses are close to each other, by definition. Hence they are both close to the park. So, although the park might affect the value of both houses, it should do so equally. Hence any *difference* in house prices cannot be attributed to the park. It must be attributed to the test score difference."
-msg3 = "While this is a reasonable point, there is a more clear answer to this question. Try again"
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3))
-```
 
 ---
 
@@ -733,24 +701,15 @@ skills: 1
 
 True or False: If we look at the data used in the Black (1999) paper, even if each school district has different property tax rates, we can still use RDD analysis to learn the causal effect of treatment.
 
+`@hint`
+
+
 `@possible_answers`
 - True
 - False
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "Are all the units on both sides of the boundary identical, except for the side of the boundary they are on? Try again"
-msg2 = "Correct! It is true that geographical borders are *often* used to learn about causal effects via RDD. But this requires that the only thing that's different between units on each side of the border is the treatment! This is often not the case. For example, if you look at country borders, there are often many different variables that change as you cross the border, which means it will be hard or impossible to disentangle the effect of just one of these variables."
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2))
-```
 
 ---
 
@@ -2862,6 +2821,9 @@ Consider the following examples. Which is an example of a fuzzy RDD and which is
 
 3. Running variable: Population. Treatment variable: Number of seats per state/province in a national government when each politician represents a different amount of citizens, like in the U.S. House of Representatives.
 
+`@hint`
+
+
 `@possible_answers`
 - All are fuzzy
 - (1) and (3) are sharp; (2) is fuzzy
@@ -2872,26 +2834,8 @@ Consider the following examples. Which is an example of a fuzzy RDD and which is
 - (1) and (3) are fuzzy; (2) is sharp
 - All are sharp
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "At least one of them is a sharp regression discontinuity design. Try again"
-msg2 = "This is not entirely correct: for example, in (3) the treatment boundary varies a bit across units, so it is fuzzy. Try again"
-msg3 = "Correct! Often the distinction between sharp and fuzzy hinges on the definition of treatment. For (1) and (2), treatment is defined as **eligibility** rather than takeup. In contrast (3) is fuzzy because the treatment boundary varies a bit across units. Rural districts may get 1 representative for every 200,000 people, but in urban districts, 1 politician may represent 600,000 people. In a way, the way that governments create districts often means they are not reacting proportionally to the changes in the population in particular regions, and it's often helpful to think of fuzzy RDDs as having a non-compliance problem."
-msg4 = "This is not entirely correct: for example, in (1) the treatment is defined as **eligibility** rather than takeup, so it is a sharp regression discontinuity design. Try again"
-msg5 = "This is not entirely correct: for example, in (2) the treatment is defined as **eligibility** rather than takeup, so it is a sharp regression discontinuity design. Try again"
-msg6 = "This is not entirely correct: for example, in (2) the treatment is defined as **eligibility** rather than takeup, so it is a sharp regression discontinuity design. Try again"
-msg7 = "This is not entirely correct: for example, in (3) the treatment boundary varies a bit across units, so it is fuzzy. Try again"
-msg8 = "At least one of them is a fuzzy regression discontinuity design. Try again"
-test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3,msg4,msg5,msg6,msg7,msg8))
-```
 
 ---
 

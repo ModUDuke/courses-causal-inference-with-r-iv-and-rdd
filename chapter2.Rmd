@@ -29,7 +29,9 @@ skills: 1
 
 A public health specialist names Phoebe is interested in how a person's wealth (their assets minus their debts) might effect their health. Phoebe has longitudinal data on people's wealth and health, but she's having trouble determining whether wealth has a causal effect on health with traditional regression models. Phoebe's concern is that a person's health varies endogenously with their weath; a person's wealth might have a positive causal effect on their health, but a person's health could also have a positive causal effect on their wealth. 
 
-To untangle this causal relationship, Phoebe decides to conduct an instrumental variable analysis of wealth's effect on health with inheritance as an exogenous instrument of wealth (that is, inheritance effects a person's wealth but does not have any direct or indirect relationship with a person's health other than through how it might affect wealth). However, Phoebe's analysis yields no statistically significant results. Phoebe also tests the relationship between inheritance and wealth, and finds that there is only a very weak correlation. Which of the following could this imply?    
+To untangle this causal relationship, Phoebe decides to conduct an instrumental variable analysis of wealth's effect on health with inheritance as an exogenous instrument of wealth (that is, inheritance effects a person's wealth but does not have any direct or indirect relationship with a person's health other than through how it might affect wealth). However, Phoebe's analysis yields no statistically significant results. Phoebe also tests the relationship between inheritance and wealth, and finds that there is only a very weak correlation. Which of the following could this imply?
+
+`@hint`
 
 
 `@possible_answers`
@@ -38,23 +40,8 @@ To untangle this causal relationship, Phoebe decides to conduct an instrumental 
 - People who inherit money often feel guilty, leading to a decline in health.
 - People are more likely to inherit money when they themselves have poor health.
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "Although this instrumental variable would be poor for this analysis (an instrument should not have a direct effect on the dependent variable), this is not an example of a 'weak' instrumental variable."
-msg2 = "Correct! Only a small percentage of people ever inherit a substantial amount of money, and those who do tend to have better wealth to begin with. So despite our theories, the data we have might have very little statistical power on the relationship between wealth and health."
-msg3 = "This answer is very similar to the first one. In this case, the problem is not that the instrument is 'weak' but that the instrument has a direct causal effect on health."
-msg4 = "Although this instrumental variable would be poor for this analysis (an instrument should be randomly assigned), this is not an example of a 'weak' instrumental variable."
-
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3,msg4))
-```
 
 ---
 
@@ -98,26 +85,16 @@ skills: 1
 
 You're doing some research and plan on using an instrumental variables strategy to help with any noncompliance. But your instrument was hard to measure perfectly, so you think its values have some measurement error. Two of the following statements are valid for an IV analysis, but which one would violate the assumptions of IV analysis and make our results invalid?
 
+`@hint`
+
+
 `@possible_answers`
 - The instrument's measurement error is independent of the values for the treatment and outcome variables
 - The instrument's measurement error is independent of the values of the treatment variable, but not for the outcome variable
 - The instrument's measurement error is independent of the values from the outcome variable, but not for the treatment variable
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "This is perfectly fine with IV analysis. If the measurement error is not affecting the measurement of the treatment and outcome variables, then we're safe. We are looking for the option that would violate the IV assumptions, so try again."
-msg2 = "Correct! This would break our IV analysis, because it would mean that the instrument has some direct effect on the values of theoutcome variable by itself, but to use IV correctly, we need the instrument to only indirectly act on the outcome via the treatment variable."
-msg3 = "This is perfectly fine with IV analysis. We expect the instrument to have a causal effect on the treatment variable, so it would make sense that the measurement error would show up in the value of our treatment variable. But we are looking for the option that would violate the IV assumptions, so try again."
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3))
-```
 
 ---
 
@@ -131,7 +108,9 @@ xp: 50
 skills: 1
 ```
 
-Let's say that you work for the city government of a town that has been rated as having the least happy children in the country. Your town also wants to increase the number of bike lanes on city streets. As a creative data analyst, you think that bike lanes may encourage families to exercise together, and exercising as a family may change the unhappy kids in your town into happy kids. You get your hands on a national dataset that has statistics on bike lanes, family exercise, and child happiness from many cities. You think that you can use bike lanes as an instrumental variable to see if family exercise has an effect on child happiness. Your basic argument is that bike lanes cause families to exercise together, and family exercise is correlated with child happiness, so bike lanes are an instrument for the effect of family exercise on child happiness. What is your best argument that the instrument does not have a direct causal effect on the outcome variable? 
+Let's say that you work for the city government of a town that has been rated as having the least happy children in the country. Your town also wants to increase the number of bike lanes on city streets. As a creative data analyst, you think that bike lanes may encourage families to exercise together, and exercising as a family may change the unhappy kids in your town into happy kids. You get your hands on a national dataset that has statistics on bike lanes, family exercise, and child happiness from many cities. You think that you can use bike lanes as an instrumental variable to see if family exercise has an effect on child happiness. Your basic argument is that bike lanes cause families to exercise together, and family exercise is correlated with child happiness, so bike lanes are an instrument for the effect of family exercise on child happiness. What is your best argument that the instrument does not have a direct causal effect on the outcome variable?
+
+`@hint`
 
 
 `@possible_answers`
@@ -140,22 +119,8 @@ Let's say that you work for the city government of a town that has been rated as
 - Traffic safety with bike lanes always varies, but kids adjust as needed
 - Some kids are happier to ride in bike lanes and happier to bike offroad, but those preferences cancel each other out
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "Correct! This is the best argument because, if kids only bike when there are bike lanes, then this argument would suddenly become a very weak one, because simply painting new lines on a road would make kids very happy, independently of whether they actually ride a bike or not."
-msg2 = "This might be true, but that is directed more at whether the treatment (riding with a family) affects the outcome (child happiness), not the instrument on the outcome like the question asks. Try again"
-msg3 = "Kids may need to feel safe to be happy, but we aren't trying to use a 'feeling of safety' as an instrument. Try again"
-msg4 = "If this were true, it sounds like the instrument would be uncorrelated with our outcome, which would make our IV analysis invalid, because we need the instrument to be correlated to the outcome exlcusively by the causal effect of the treatment. So try again."
-test_mc(correct = 1, feedback_msgs = c(msg1,msg2,msg3,msg4))
-```
 
 ---
 
@@ -344,26 +309,16 @@ skills: 1
 
 Remember back to an earlier video, where we looked at the hyothetical question of whether going to college increases how much money you make, using the travel distance between home and the college as an instrumental variable. Researchers looking at this analysis will be worrying about the nonrefutable Exclusion Restriction and Exogeneity Assumption in this design. What do you think the most valid criticism would be?
 
+`@hint`
+
+
 `@possible_answers`
 - Researchers think the Relevance Assumption does not hold: whether you live close to a college or not doesn't actually affect whether you go to college or not
 - Researchers think the Exclusion Restriction does not hold: employers are willing to pay people more money if students went to high school in a town that was close to a college
 - Researchers think the Exogeneity Assumption does not hold: there are unobserved variables, like ability, which are correlated with distance-to-college and which also affect how much income you'll make
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "Not quite. Remember that relevance is refutable, so people don't usually complain about this because it can be checked in the data. Try again"
-msg2 = "This is probably not the most common complaint, because it would take a long and complex argument to justify this as the single main reason why the IV analysis is invalid. Try again"
-msg3 = "Correct! This would be the most common complaint, and it's a good one. Luckily, the example was theoretical!"
-test_mc(correct = 3, feedback_msgs = c(msg1,msg2,msg3))
-```
 
 ---
 
@@ -765,24 +720,15 @@ The previous two coding exercises used two separate methods to estimate a causal
 
 In general, do you think that these two methods will always yield the same results?
 
+`@hint`
+
+
 `@possible_answers`
 - Yes
 - No
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "Try again"
-msg2 = "Correct! The previous coding examples happened to yield identical results because of the specific situation. In general, the results should yield numbers that are 'statistically similar': that is, the confidence interval of one should contain the other."
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2))
-```
 
 ---
 
@@ -844,24 +790,15 @@ But two data analysts, Alex and Monique, are working together on an IV analysis,
 
 Who is giving better advice for defending the 'nonrefutable' assumptions of IV?
 
+`@hint`
+
+
 `@possible_answers`
 - Alex is correct: the assumptions are nonrefutable without perfect information, so more data won't help with them 
 - Monique is correct: it's better to add more datasets to reduce the guesswork about the model
 
-`@hint`
+`@feedback`
 
-
-`@pre_exercise_code`
-```{r}
-
-```
-
-`@sct`
-```{r}
-msg1 = "'Refutability' is defined with respect to a model, which includes a description of the precise set of data which is observable. For example, suppose I observe a dataset with the age of person in the United States. Then the claim that the average age is 26 is refutable—-I can simply compute the true average age and then see if it really is 26 or not. But the claim that the average annual income is $30,000 is not refutable. That’s just because my dataset doesn’t have income in it! If I observed data on income, then that claim would become refutable. Try again."
-msg2 = "Correct. Without more or different kinds of data, typically the exogeneity and exclusion assumptions are not refutable, and Alex would be right. However, if you add more data or change the assumptions in different ways, it is sometimes possible to convert a nonrefutable assumption into a refutable assumption. But you should always be ready with qualitative arguments to strengthen your defense of these assumptions."
-test_mc(correct = 2, feedback_msgs = c(msg1,msg2))
-```
 
 ---
 
