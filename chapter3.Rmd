@@ -2834,7 +2834,7 @@ Consider the following examples. Which is an example of a fuzzy RDD and which is
 `@possible_answers`
 - All are fuzzy
 - (1) and (3) are sharp; (2) is fuzzy
-- (1) and (2) are sharp; (3) is fuzzy
+- [(1) and (2) are sharp; (3) is fuzzy]
 - (1) is fuzzy; (2) and (3) are sharp
 - (1) and (2) are fuzzy; (3) is sharp
 - (1) is sharp; (2) and (3) are fuzzy
@@ -2842,7 +2842,14 @@ Consider the following examples. Which is an example of a fuzzy RDD and which is
 - All are sharp
 
 `@feedback`
-
+- At least one of them is a sharp regression discontinuity design. Try again.
+- This is not entirely correct: for example, in (3) the treatment boundary varies a bit across units, so it is fuzzy. Try again.
+- Correct! Often the distinction between sharp and fuzzy hinges on the definition of treatment. For (1) and (2), treatment is defined as **eligibility** rather than takeup. In contrast (3) is fuzzy because the treatment boundary varies a bit across units. Rural districts may get 1 representative for every 200,000 people, but in urban districts, 1 politician may represent 600,000 people. In a way, the way that governments create districts often means they are not reacting proportionally to the changes in the population in particular regions, and it's often helpful to think of fuzzy RDDs as having a non-compliance problem.
+- This is not entirely correct: for example, in (1) the treatment is defined as **eligibility** rather than takeup, so it is a sharp regression discontinuity design. Try again.
+- This is not entirely correct: for example, in (2) the treatment is defined as **eligibility** rather than takeup, so it is a sharp regression discontinuity design. Try again.
+- This is not entirely correct: for example, in (2) the treatment is defined as **eligibility** rather than takeup, so it is a sharp regression discontinuity design. Try again.
+- This is not entirely correct: for example, in (3) the treatment boundary varies a bit across units, so it is fuzzy. Try again"
+- At least one of them is a fuzzy regression discontinuity design. Try again.
 
 ---
 
