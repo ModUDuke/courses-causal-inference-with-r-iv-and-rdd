@@ -200,7 +200,10 @@ Suppose you are interested in the economic status of new college graduates, and 
 - Both
 
 `@feedback`
-
+msg1 = "Where people choose to live and work are usually affected by at least some shared factors, which means it's not all external forces impacting these--unless they are in the military or in prison! Try again"
+msg2 = "Correct! People who work in urban areas probably live in urban areas, and people that work in rural areas probably live in rural areas, so these choices are being influenced by shared factors, which means they have endogenous variation. The most common exceptions to this would be things like military service (or a prison sentence!)."
+msg3 = "While there might be external reasons that affect people's choice of where to live in ways they cannot change, usually it's the case that people ultimately make the decision on where they want to live. Try again"
+test_mc(correct = 2, feedback_msgs = c(msg1,msg2,msg3))
 
 ---
 
