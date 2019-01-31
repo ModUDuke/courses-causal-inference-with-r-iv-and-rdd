@@ -1,6 +1,7 @@
 ---
 title: 'Introduction to Instrumental Variables'
 description: 'This chapter will introduce you to Instrumental Variables (IV) analysis, a tricky but powerful method to find causality through indirect inference'
+free_preview: true
 ---
 
 ## Course Trailer for Causal Inference with R – Instrumental Variables & RDD
