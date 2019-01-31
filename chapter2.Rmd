@@ -231,8 +231,6 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
 ```{r}
 # The dataset `CreditCo` is available in your workspace. Here is a data dictionary to help you make sense of the variable names and what they are representing:
 
-## Data Dictionary:
-
 #  `id` - customer ID
 #  `offered` - did customer get the offer for a higher limit?
 #  `opt_in` - did the customer opt into the higher limit?
@@ -440,8 +438,6 @@ Included on the workspace is a data set from CreditCo. The data are a sample of 
 ```{r}
 # The dataset `CreditCo` is available in your workspace. Again, here is a data dictionary to help you make sense of the variable names and what they are representing:
 
-## Data Dictionary:
-
 #  `id` - customer ID
 #  `offered` - did customer get the offer for a higher limit?
 #  `opt_in` - did the customer opt into the higher limit?
@@ -636,8 +632,6 @@ Now let us repeat the previous CreditCo analysis, but now use 2SLS to compute th
 `@sample_code`
 ```{r}
 # The dataset `CreditCo` is available in your workspace. Once again, here is a data dictionary to help you make sense of the variable names and what they are representing:
-
-## Data Dictionary:
 
 #  `id` - customer ID
 #  `offered` - did customer get the offer for a higher limit?
@@ -1122,8 +1116,6 @@ OHIE <- OHIE[!is.na(OHIE$pos_depression_screen),c("id","intvw","lottery","gender
 `@sample_code`
 ```{r}
 # The dataset `OHIE` and the function `ivreg2` are both available in your workspace. Here is a data dictionary to help you make sense of the variable names and what they are representing:
-
-## Data Dictionary:
 
 #  `id` - patient ID
 #  `intvw` - was patient interviewed?
