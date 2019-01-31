@@ -175,7 +175,7 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
 
 `@pre_exercise_code`
 ```{r}
-   set.seed(2019)
+  set.seed(2019)
   n             <- 5e2
   frac_treated  <- .5
   frac_female   <- .5656
