@@ -271,7 +271,6 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
 `@solution`
 ```{r}
 Solution2 <- lm(opt_in~rainy,data=CreditCo)
-  summary(Solution2)
 Solution3 <- 0.0449
 Solution4 <- "negative"
 ```
