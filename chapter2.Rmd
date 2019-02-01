@@ -467,7 +467,7 @@ Included on the workspace is a data set from CreditCo. The data are a sample of 
   CreditCo$balance_post <- exp(CreditCo$balance_post)
 # Remove elements and variables from environment
   rm(draw,frac_female,frac_treated,frac_white,n,p,xb)
-  CreditCo <- CreditCo[CreditCo$offered==1,c("id","opt_in","FICO","female","race_white","default_pre","default_post","balance_pre","balance_post","rainy")]
+  CreditCo <- CreditCo[CreditCo$offered==1,c("id","opt_in","FICO","female","race_white","default_pre","default_post","balance_pre","balance_post","windy","rainy")]
 ```
 
 `@sample_code`
