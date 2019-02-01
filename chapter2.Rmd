@@ -162,13 +162,15 @@ If you took our Experiments course, you assessed the validity of a natural exper
 
 As you may recall, CreditCo sent out offers in the mail to increase their customers' credit limits. We are worried that the customers who took up the offer might not have randomly done so, which causes an endogeneity problem. We proposed to solve this problem by using the rainy weather on the day the credit offers were delivered as an instrument for treatment. Specifically, you realized that heavy storms across the country hit half the zipcodes in the treatment group, while the other half of customers experienced sunny weather the day the offer arrived. You realize this variation in the weather may have made customers in the rainy zones feel depressed and therefore ignored the offer, while those in the sunny zones felt cheerful, and because of their good mood took up the offer. Because the weather is out of anyone's control, we can argue it is exogenous to any other factors related to credit card offers, and it also seems to be the exclusive source of variation between the treatment and control groups. Let's try using IV analysis to see if it provides a convincing causal explanation.
 
-Included on the workspace is a dataset from CreditCo. The data are a sample of CreditCo customers who were offered the credit limit increase. We will focus on the variable `rainy`, which we will use as an instrument for `opt_in`, which we suspect is endogenous to our outcomes of interest.
+Included on the workspace is a dataset from CreditCo. The data are a sample of CreditCo customers who were offered the credit limit increase. We have two possible options for instruments from the stormy weather, the variables `windy` and `rainy`. Let's see which one we can use as an instrument for `opt_in`, which we suspect is endogenous to our outcomes of interest.
 
 `@instructions`
 - 1) Explore the dataset `CreditCo` on your own with basic tools like head(), str(), and summary().
-- 2) Using a linear regression, compute the correlation between opt-in and rain.
-- 3) Test whether rain satisfies the relevance assumption (i.e. if its correlation with opt-in is significantly different from zero).
-- 4) What is the sign of the correlation between rain and opt-in?
+- 2) Using a linear regression, compute the correlation between `opt-in` and `windy`.
+- 3) Test whether `rainy` satisfies the relevance assumption (i.e. if its correlation with opt-in is significantly different from zero).
+- 4) Using a linear regression, compute the correlation between `opt-in` and `rainy`.
+- 5) Test whether `rainy` satisfies the relevance assumption (i.e. if its correlation with opt-in is significantly different from zero).
+- 6) What is the sign of the correlation between rain and opt-in?
 
 `@hint`
 - Remember to be aware of selecting the correct subsample
@@ -204,11 +206,20 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
   draw <- rnorm(n, mean=0, sd=0.5)
   CreditCo$balance_pre <- 8.5-0.2*CreditCo$FICO/100+.046*(CreditCo$FICO^2)/10000-0.15*CreditCo$female-0.85*CreditCo$race_white + draw
   CreditCo$balance_pre <- exp(CreditCo$balance_pre)
-# Simulate opt-in behavior based on weather
+# Simulate opt-in behavior based on rainy weather
   draw <- runif(n)
   draw2 <- runif(n)
   CreditCo$rainy <- draw>0.5
   xb   <- -.2*CreditCo$rainy
+  p    <- exp(xb)/(1+exp(xb))
+  CreditCo$opt_in[CreditCo$offered==1] <- as.integer(draw2[CreditCo$offered==1]<p[CreditCo$offered==1])
+  CreditCo$optin_p <- p
+
+  # Simulate opt-in behavior based on windy weather
+  draw <- runif(n)
+  draw2 <- runif(n)
+  CreditCo$windy <- draw>0.5
+  xb   <- -.001*CreditCo$windy
   p    <- exp(xb)/(1+exp(xb))
   CreditCo$opt_in[CreditCo$offered==1] <- as.integer(draw2[CreditCo$offered==1]<p[CreditCo$offered==1])
   CreditCo$optin_p <- p
@@ -224,7 +235,7 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
   CreditCo$balance_post <- exp(CreditCo$balance_post)
 # Remove elements and variables from environment
   rm(draw,frac_female,frac_treated,frac_white,n,p,xb)
-  CreditCo <- CreditCo[CreditCo$offered==1,c("id","opt_in","FICO","female","race_white","default_pre","default_post","balance_pre","balance_post","rainy")]
+  CreditCo <- CreditCo[CreditCo$offered==1,c("id","opt_in","FICO","female","race_white","default_pre","default_post","balance_pre","balance_post","windy","rainy")]
 ```
 
 `@sample_code`
@@ -244,6 +255,7 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
 #  `default_post` - customer's default rate after the offer
 #  `balance_pre` - customer's credit balance before the offer
 #  `balance_post` - customer's credit balance after the offer
+#  `windy` - TRUE if there were high wind speeds at customer's house
 #  `rainy` - TRUE if it rained at the customer's house
 
 
@@ -251,28 +263,40 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
 
 
 
-
-# 2) First we need to determine whether our instrument satisfies the Relevance Assumption, and we'll start this process by looking to see if it has any correlation with our outcome variable. Using a linear regression, compute the correlation coefficient between rain and opt-in status, and then run the summary() command to see if there is a correlation between the instrument and our treatment.
+#2) First we need to determine whether our instrument satisfies the Relevance Assumption, so let's start with the variable `windy`, which tracks whether it was unusually windy at the respondents house, which would 
 
     Solution2 <- lm( ~ ,data=CreditCo)
     summary()
 
-# 3) If that regression does show a correlation between opt-in status and rainy weather, we need to make sure it's a statistically significant one. What is the p-value associated with the t-test on the coefficient of rain? Enter in the p-value for this t-test as Solution3:
+# 3) If that regression does show a correlation between opt-in status and windy weather, we need to make sure it's a statistically significant one. We will use the typical standard and hope that the p-value is under 0.05. What is the p-value associated with the t-test on the coefficient of windy? Enter in the p-value for this t-test as Solution3:
 
     Solution3 <-
 
-# 4) What is the sign of the correlation between rain and opt-in? You can write "positive", "negative", or "no correlation" into Solution4 as the answer:
+# That p-value shows that the variable `windy` is not statistically correlated with the respondent's opt-in behavior, so we must say that it fails the Relevance Assumption and we can't use it as an instrument. But that still leaves us with the rainy part of this stormy weather, so let's try that next.
 
-    Solution4 <- ""
+# 4) Now let's find out if the variable `rainy` is a better candidate to be an instrumental variable. Using a linear regression, compute the correlation coefficient between rain and opt-in status, and then run the summary() command to see if there is a correlation between the instrument and our treatment.
+
+    Solution4 <- lm( ~ ,data=CreditCo)
+    summary()
+
+# 5) If that regression does show a correlation between opt-in status and rainy weather, we need to make sure it's a statistically significant one. What is the p-value associated with the t-test on the coefficient of rain? Enter in the p-value for this t-test as Solution3:
+
+    Solution5 <-
+
+# 6) What is the sign of the correlation between rain and opt-in? You can write "positive", "negative", or "no correlation" into Solution4 as the answer:
+
+    Solution6 <- ""
 
 
 ```
 
 `@solution`
 ```{r}
-Solution2 <- lm(opt_in~rainy,data=CreditCo)
-Solution3 <- 0.0449
-Solution4 <- "negative"
+Solution2 <- lm(opt_in~windy,data=CreditCo)
+Solution3 <- 0.67
+Solution4 <- lm(opt_in~rainy,data=CreditCo)
+Solution5 <- 0.0449
+Solution6 <- "negative"
 ```
 
 `@sct`
@@ -280,7 +304,9 @@ Solution4 <- "negative"
 ex() %>% check_object("Solution2") %>% check_equal()
 ex() %>% check_object("Solution3") %>% check_equal()
 ex() %>% check_object("Solution4") %>% check_equal()
-success_msg("Good work! Our instrument does seem to have a statistically significant negative correlation with our outcome variable. This is one important pillar that supports our argument that we can use the rainy weather as an instrument in this analysis.")
+ex() %>% check_object("Solution5") %>% check_equal()
+ex() %>% check_object("Solution6") %>% check_equal()
+success_msg("Good work! The variable `rainy` does seem to have a statistically significant negative correlation with our outcome variable. Because we can say that it satisfies the Relevance Assumption, this is one important pillar that supports our argument that we can use the rainy weather as an instrument in this analysis.")
 ```
 
 ---
@@ -412,11 +438,20 @@ Included on the workspace is a data set from CreditCo. The data are a sample of 
   draw <- rnorm(n, mean=0, sd=0.5)
   CreditCo$balance_pre <- 8.5-0.2*CreditCo$FICO/100+.046*(CreditCo$FICO^2)/10000-0.15*CreditCo$female-0.85*CreditCo$race_white + draw
   CreditCo$balance_pre <- exp(CreditCo$balance_pre)
-# Simulate opt-in behavior based on weather
+# Simulate opt-in behavior based on rainy weather
   draw <- runif(n)
   draw2 <- runif(n)
   CreditCo$rainy <- draw>0.5
   xb   <- -.2*CreditCo$rainy
+  p    <- exp(xb)/(1+exp(xb))
+  CreditCo$opt_in[CreditCo$offered==1] <- as.integer(draw2[CreditCo$offered==1]<p[CreditCo$offered==1])
+  CreditCo$optin_p <- p
+
+  # Simulate opt-in behavior based on windy weather
+  draw <- runif(n)
+  draw2 <- runif(n)
+  CreditCo$windy <- draw>0.5
+  xb   <- -.001*CreditCo$windy
   p    <- exp(xb)/(1+exp(xb))
   CreditCo$opt_in[CreditCo$offered==1] <- as.integer(draw2[CreditCo$offered==1]<p[CreditCo$offered==1])
   CreditCo$optin_p <- p
@@ -609,7 +644,8 @@ Now let us repeat the previous CreditCo analysis, but now use 2SLS to compute th
   draw <- rnorm(n, mean=0, sd=0.5)
   CreditCo$balance_pre <- 8.5-0.2*CreditCo$FICO/100+.046*(CreditCo$FICO^2)/10000-0.15*CreditCo$female-0.85*CreditCo$race_white + draw
   CreditCo$balance_pre <- exp(CreditCo$balance_pre)
-# Simulate opt-in behavior based on weather
+
+# Simulate opt-in behavior based on rainy weather
   draw <- runif(n)
   draw2 <- runif(n)
   CreditCo$rainy <- draw>0.5
@@ -618,11 +654,11 @@ Now let us repeat the previous CreditCo analysis, but now use 2SLS to compute th
   CreditCo$opt_in[CreditCo$offered==1] <- as.integer(draw2[CreditCo$offered==1]<p[CreditCo$offered==1])
   CreditCo$optin_p <- p
 
-  # Simulate opt-in behavior based on cloudy weather
+  # Simulate opt-in behavior based on windy weather
   draw <- runif(n)
   draw2 <- runif(n)
-  CreditCo$cloudy <- draw>0.5
-  xb   <- -.001*CreditCo$cloudy
+  CreditCo$windy <- draw>0.5
+  xb   <- -.001*CreditCo$windy
   p    <- exp(xb)/(1+exp(xb))
   CreditCo$opt_in[CreditCo$offered==1] <- as.integer(draw2[CreditCo$offered==1]<p[CreditCo$offered==1])
   CreditCo$optin_p <- p
