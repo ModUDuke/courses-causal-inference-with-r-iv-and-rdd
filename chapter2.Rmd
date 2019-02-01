@@ -605,7 +605,7 @@ skills: 1
 Now let us repeat the previous CreditCo analysis, but now use 2SLS to compute the causal effect instead of indirect inference.
 
 `@instructions`
-- 1) Using a linear regression, compute the first-stage effect (i.e. correlation between opting in and rain)
+- 1) Using a linear regression, compute the first-stage effect (i.e. correlation between opting in and the rain storm)
 - 2) Compute the predicted values of opting in
 - 3) Compute the causal effect by linear regression (i.e. correlation between credit balance and predicted opt-in rate)
 - 4) Did opting in to the credit offer increase or decrease credit balances?
