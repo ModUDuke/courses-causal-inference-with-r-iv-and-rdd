@@ -607,7 +607,7 @@ DCdensity <- function(runvar,cutpoint,bin=NULL,bw=NULL,verbose=FALSE,plot=TRUE,e
       DCdensity(NBA$[running.var],[cutoff],plot=TRUE)
 
   
-# 3) Now issue the command again (again by inserting the correct variable names in the placeholder spots), but print the p-value output for the McCrary test. Remember, if the p-value for the McCrary test is less than or equal to .05, then we can be 95% percent sure that there is manipulation going on in the data. You can easily print the p-value in R by simply wrapping the correctly filled DCdensity() function with the print() function:
+# 3) Now issue the command again (again by inserting the correct variable names in the placeholder spots), but print the p-value output for the McCrary test. Remember, if the p-value for the McCrary test is less than or equal to .05, then we can be 95% percent sure that there is manipulation going on in the data. If the p-value of the McCrary test is above .05 (especially if it is well above .05), then we can be pretty sure that there is no manipulation going on. You can easily print the p-value in R by simply wrapping the correctly filled DCdensity() function with the print() function:
 
       print(DCdensity(NBA$[running.var],[cutoff],plot=FALSE))
       
