@@ -714,7 +714,7 @@ Now let us repeat the previous CreditCo analysis, but now use 2SLS to compute th
     Solution3<-lm( ~ ,data=CreditCo)
     summary()
 
-# 4) Based on our use of the instrumental variable of `rainy`, did opting in to the credit offer increase or decrease credit balances of CreditCo's customers? (to Solution 4, type "increased" or "decreased")
+# 4) Based on our use of the instrumental variable of `rainy`, did opting in to the credit offer increase or decrease credit balances of CreditCo's customers? (to Solution 4, type "increase" or "decrease")
 
     Solution4<-""
 
@@ -727,7 +727,7 @@ Solution1 <- lm(opt_in~rainy,data=CreditCo)
 Solution2 <- predict(Solution1,data=CreditCo)
 CreditCo$prediction <- Solution2
 Solution3 <- lm(balance_post ~ prediction,data=CreditCo)
-Solution4 <- "increased"
+Solution4 <- "increase"
 ```
 
 `@sct`
