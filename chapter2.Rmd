@@ -863,9 +863,9 @@ xp: 100
 skills: 1
 ```
 
-In an earlier course, you analyzed data from the Oregon Healthcare Insurance Experiment (OHIE) where you assumed that everyone who was offered Medicaid coverage ended up getting covered. Now let us relax this assumption and instead assume that not everyone who was offered Medicaid coverage actually enrolled.
+In an earlier course, you analyzed data from the Oregon Healthcare Insurance Experiment (OHIE) where you assumed that everyone who was offered Medicaid coverage ended up getting covered. Now let us relax this assumption and instead assume that not everyone who was offered Medicaid coverage actually enrolled. This is a more realistic model of what actually happened, and it plays into the strengths of the Instrumental Variables method.
 
-Instead, we will instrument for Medicaid takeup using assignment to the treatment group as an instrument.
+So we will use assignment to the treatment group as an instrument, and we will check to see if that instrument shows us whether Medicaid had any effect on one of our health outcomes of interest, the number of people who were identified as having depression during a health screening.
 
 `@instructions`
 - 1) Explore the data on your own, using functions like head(), str(), and summary()
@@ -873,7 +873,7 @@ Instead, we will instrument for Medicaid takeup using assignment to the treatmen
 - 3) Estimate the 2SLS effect of taking up the offer on positive depression screening using two separate calls to `lm()`
 
 `@hint`
-- Remember to include additional demographic controls in your regression model
+- Remember to include the correct additional demographic control variables in your regression models. There will be a lot of them, but you do not need to include `age_19_34_inp` or `race_white_inp`.
 
 `@pre_exercise_code`
 ```{r}
@@ -1191,26 +1191,33 @@ OHIE <- OHIE[!is.na(OHIE$pos_depression_screen),c("id","intvw","lottery","gender
 
 
 
-# 2) Let's see what answer we get if we treat the lottery as an experiment where we consider getting the option for Medicaid as our treatment, and see if it shows any effect on our outcome of interest, the ratio of peopel with positive depression screens. Using a linear regression, compute the Intention-to-Treat effect of being assigned to the treatment group ("lottery" variable) on positive depression screening, while also controlling for gender, age, ethnicity, and interview language. Exclude `age_19_34_inp` and `race_white_inp` from the set of right hand side dummy variables.
+# 2) Let's see what answer we get if we treat the lottery as an experiment where we consider getting the option for Medicaid as our treatment, and see if it shows any effect on our outcome of interest, the ratio of people with positive depression screens, which is captured in the variable `pos_depression_screen`. Using a linear regression, compute the Intention-to-Treat effect of being assigned to the treatment group ("lottery" variable) on positive depression screening, while also controlling for gender, age, ethnicity, and interview language (so it will be a long list of variable names). Exclude `age_19_34_inp` and `race_white_inp` from the set of right hand side dummy variables.
 
-    Solution1<-summary(lm( ~ ,data=OHIE))
+    Solution2<-summary(lm( ~ ,data=OHIE))
+	summary()
 
-# Good. If you take a look at Solution1, you'll see that having the option of getting insurance through the lotter seems to have a small downward pressure on our positive depression screen variable, which is good! But is this really a causal effect? Let's try again with IV analysis and see what we get.
+# Good. If you take a look at Solution1, you'll see that having the option of getting insurance through the lottery seems to have a small downward pressure on our positive depression screen variable, which is good! But is this really a causal effect? Let's try again with IV analysis and see what we get.
 
-# 3) We'll use the 2-Stage Least Squares method to calculate our causal effect through our instrumental variable, `lottery`. The first stage is to find the correlation between the treatment and the instrument, which we will store in the variable `prediction`, and the second stage is to find the correlation between our outcome and our adjusted treatment variable `prediction`, holding the other variables constant. This will give us the causal effect of health insurance on our outcome of interest, the ratio of people with positive depression screen scores.
 
-# Compute the the 2SLS effect of insurance takeup on depression by using `lottery` as an instrument for the endogenous takeup indicator "insurance".
+# 3) Now we will use the 2-Stage Least Squares method to calculate our causal effect through our instrumental variable, `lottery`.  
+
+# The first stage is to find the correlation between the treatment and the instrument, which we will store this correlation in the variable `prediction`. Fill out the following function with the dependent and independent variables we need to control for (it should be the same list of variables as in the previous regression):
 
     OHIE$prediction<-predict(lm( ~ ,data=OHIE))
-    Solution2<-summary(lm( ~ prediction+... ,data=OHIE))
+    
+# The second stage is to find the correlation between our outcome and our adjusted treatment variable `prediction`, holding the same other variables constant. So use `prediction` to compute the the 2SLS effect of insurance takeup on depression by using `lottery` as an instrument for the endogenous takeup indicator "insurance". This will give us the causal effect of health insurance on our outcome of interest, the ratio of people with positive depression screen scores.
+
+	Solution3<-summary(lm( ~ prediction+... ,data=OHIE))
+	summary()
+
 
 ```
 
 `@solution`
 ```{r}
-Solution1<-summary(lm(pos_depression_screen~lottery+gender_inp+age_35_49_inp+age_50_64_inp+race_black_inp+race_nwother_inp+hispanic_inp+itvw_english_inp,data=OHIE))
+Solution2<-summary(lm(pos_depression_screen~lottery+gender_inp+age_35_49_inp+age_50_64_inp+race_black_inp+race_nwother_inp+hispanic_inp+itvw_english_inp,data=OHIE))
 OHIE$prediction<-predict(lm(insurance~lottery+gender_inp+age_35_49_inp+age_50_64_inp+race_black_inp+race_nwother_inp+hispanic_inp+itvw_english_inp,data=OHIE),data=OHIE)
-Solution2<-summary(lm(pos_depression_screen~prediction+gender_inp+age_35_49_inp+age_50_64_inp+race_black_inp+race_nwother_inp+hispanic_inp+itvw_english_inp,data=OHIE),data=OHIE)
+Solution3<-summary(lm(pos_depression_screen~prediction+gender_inp+age_35_49_inp+age_50_64_inp+race_black_inp+race_nwother_inp+hispanic_inp+itvw_english_inp,data=OHIE),data=OHIE)
 ```
 
 `@sct`
