@@ -263,7 +263,7 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
 
 
 
-#2) First we need to determine whether our instrument satisfies the Relevance Assumption, so let's start with the variable `windy`, which tracks whether it was unusually windy at the respondents house, which would 
+#2) First we need to determine whether our instrument satisfies the Relevance Assumption, so let's start with the variable `windy`, which tracks whether it was unusually windy at the respondents house. We are looking for a regression coefficient that is not zero, and that is also statistically significant. First let's run a simple regression of the variable `windy` on the variable `opt_in` in the CreditCo dataframe:
 
     Solution2 <- lm( ~ ,data=CreditCo)
     summary()
