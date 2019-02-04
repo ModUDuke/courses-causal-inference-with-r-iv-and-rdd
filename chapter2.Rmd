@@ -272,7 +272,7 @@ Included on the workspace is a dataset from CreditCo. The data are a sample of C
 
     Solution3 <-
 
-# That p-value shows that the variable `windy` is not statistically correlated with the respondent's opt-in behavior, so we must say that it fails the Relevance Assumption and we can't use it as an instrument. But that still leaves us with the rainy part of this stormy weather, so let's try that next.
+# That p-value is far above our cutoff of .05, and it shows that the variable `windy` is not statistically correlated with the respondent's opt-in behavior. Therefore we must say that it fails the Relevance Assumption, and we can't use it as an instrument. But that still leaves us with the rainy part of this stormy weather as a potential instrument, so let's try that next.
 
 # 4) Now let's find out if the variable `rainy` is a better candidate to be an instrumental variable. Using a linear regression, compute the correlation coefficient between rain and opt-in status, and then run the summary() command to see if there is a correlation between the instrument and our treatment.
 
