@@ -286,7 +286,7 @@ So we will check the data to check our distributions near the cutoff with the st
 - 7) Decide if this new data is suitable for a regression discontinuity analysis
 
 `@hint`
-- A p-value less than or equal to .05 means that we can have 95% confidence that the data has actually been manipulated
+- A p-value less than or equal to .05 means that we can have 95% confidence that the data has actually been manipulated. We will use the standard that anything less than 95% confidence in manipulation will be interpreted as no manipulation was occurring in these games.
 
 `@pre_exercise_code`
 ```{r}
