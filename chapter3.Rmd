@@ -126,11 +126,13 @@ As you look at the chart, you can see how the line begins at a negative predicte
 
 `@possible_answers`
 - Because the RDD isn't controlling for team quality in an appropriate way
-- Because we should expect teams that are farther ahead at halftime to have a higher chance of winning, regardless of team quality or any other attribute
+- [Because we should expect teams that are farther ahead at halftime to have a higher chance of winning, regardless of team quality or any other attribute]
 - Because there is an inherent home court advantage in the NBA
 
 `@feedback`
-
+- We have a pretty healthy sample of NBA games, all teams are included both at home and away, and we are looking at games that are within 1 or 2 points at halftime, so in theory the teams are going to be of roughly equal quality on that day. Try again.
+- Good job! This is an example of why conclusions from RDD analyses are only valid at the boundary of the discontinuity! If we get too far away, we will be picking up effects that will confound our causal inference.
+- This actually has a basis in fact, but we are avoiding the home/road differential in team performance by looking at just the results of the home games for a team, not of both home and road games. Try again.
 
 ---
 
