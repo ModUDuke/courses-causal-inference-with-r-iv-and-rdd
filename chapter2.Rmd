@@ -1222,7 +1222,7 @@ Solution3<-summary(lm(pos_depression_screen~prediction+gender_inp+age_35_49_inp+
 
 `@sct`
 ```{r}
-ex() %>% check_object("Solution1") %>% check_equal()
 ex() %>% check_object("Solution2") %>% check_equal()
+ex() %>% check_object("Solution3") %>% check_equal()
 success_msg("Good work! This estimate for the causal effect of insurance on our outcome variable, positive depression screens, is about 5 times larger than we saw in the Intention-to-Treat analysis. It looks like health insurance does improve health outcomes, at least for this variable.")
 ```
